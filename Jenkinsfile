@@ -32,6 +32,11 @@ pipeline {
             	reportFiles: '*.html',
             	reportName: 'Extent Report'
             ])
+            
+            archiveArtifacts(
+            artifacts: 'reports/*.html',
+            allowEmptyArchive: true
+            )
         }
 		
         success {
