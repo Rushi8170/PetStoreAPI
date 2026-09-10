@@ -12,8 +12,8 @@ pipeline {
 
         stage('Execute Tests') {
             steps {
-                echo "Running all test cases from HTTPRequests.java..."
-                bat 'mvn test -Dtest=HTTPRequests'
+                echo 'Running all test cases from testng.xml...'
+			    bat 'mvn clean test -DsuiteXmlFiles=testng.xml'
             }
         }
     }
