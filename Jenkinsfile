@@ -19,6 +19,21 @@ pipeline {
     }
 
     post {
+		
+		always {
+            echo "Publishing reports..."
+
+            // Publish Extent Report
+            publishHTML(target: [
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'reports',
+                reportFiles: 'ExtentReport.html',
+                reportName: 'Extent Report'
+            ])
+        }
+		
         success {
             echo 'HTTPRequests test cases executed successfully.'
         }
