@@ -26,11 +26,11 @@ pipeline {
             // Publish Extent Report
             publishHTML(target: [
                 allowMissing: true,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'reports',
-                reportFiles: 'ExtentReport.html',
-                reportName: 'Extent Report'
+           		alwaysLinkToLastBuild: true,
+            	keepAll: true,
+            	reportDir: 'reports',
+            	reportFiles: '*.html',
+            	reportName: 'Extent Report'
             ])
         }
 		
